@@ -17,7 +17,7 @@ export default function Sidebar() {
     const { navigate } = useAppContext()
     return (
         <motion.aside
-            className="w-20 md:w-80 bg-black border-r-8 border-red-500 fixed h-screen top-0"
+            className="w-20 md:w-80 bg-black border-r-8 border-red-500 fixed top-0 left-0 z-40 h-full min-h-screen"
             initial={{ x: -300 }}
             animate={{ x: 0 }}
             transition={{ duration: 0.5 }}
@@ -31,7 +31,7 @@ export default function Sidebar() {
 
                 {/* Navigation */}
                 <nav className="space-y-2">
-                    {sidebarItems.map((item, index) => (
+                    {sidebarItems.map((item) => (
                         <NavLink
                             key={item.path}
                             end={item.end}
@@ -44,7 +44,7 @@ export default function Sidebar() {
                                 }`
                             }
                         >
-                            <item.icon className="w-5 h-5" />
+                            <item.icon className="w-5 h-5 mr-0 md:mr-3" />
                             <span className="hidden md:inline-block">{item.label}</span>
                         </NavLink>
                     ))}

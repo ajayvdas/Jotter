@@ -12,7 +12,7 @@ export default function BlogTableItem({ blog, fetchBlogs, index }) {
     const { axios } = useAppContext();
 
     const deleteBlog = async () => {
-        console.log("Clicking delete blog")
+        console.log("Clicking delete blog");
         const confirmDelete = window.confirm("Are you sure you want to delete this blog?");
         if (!confirmDelete) return;
         try {

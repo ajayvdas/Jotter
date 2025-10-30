@@ -19,29 +19,27 @@ export default function BlogPage() {
     const [comments, setComments] = useState([]);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // const handleCommentSubmit = (e) => {
-    //     e.preventDefault();
-    //     addComment(e);
-    // };
-
     const fetchBlogData = async () => {
         try {
-            const { data } = await axios.get(`/api/blog/${id}`);
-            console.log(data);
-            data.success ? setData(data.blog) : console.log(data.blog);
-            if (!data.success) {
-                toast.error(data.message);
+            const response = await axios.get(`/api/blog/${id}`);
+            const { success, blog, message } = response.data;
+
+            if (success) {
+                setData(blog);
+            } else {
+                toast.error(message || "Failed to fetch blog data.");
             }
         } catch (error) {
-            console.log("error in fetchblog is: ", error);
-            toast.error(error.message);
+            const errorMsg = error.response?.data?.message || error.message || "Something went wrong.";
+            toast.error(errorMsg);
+            console.error("Error fetching blog data:", error);
         }
     };
 
     const fetchComments = async () => {
         try {
             const { data } = await axios.post("/api/blog/comments", { blogId: id });
-            console.log(data);
+            
             data.success ? setComments(data.comments) : toast.error(data.message);
         } catch (error) {
             console.log("error in fetchComments is: ", error);
@@ -58,7 +56,7 @@ export default function BlogPage() {
                 name: commentorName,
                 content: commentText,
             });
-            console.log(id, commentorName, commentText);
+            
             if (data.success) {
                 toast.success(data.message);
                 setCommentorName("");
@@ -92,10 +90,9 @@ export default function BlogPage() {
                 <div className="container mx-auto px-4 py-4">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-4">
-                            
-                                <div className="flex items-center space-x-2 cursor-pointer"  onClick={() => navigate(-1)}>
-                                    <span className="text-2xl font-black text-white tracking-wider">JOTTER.</span>
-                                </div>
+                            <div className="flex items-center space-x-2 cursor-pointer" onClick={() => navigate(-1)}>
+                                <span className="text-2xl font-black text-white tracking-wider">JOTTER.</span>
+                            </div>
                         </div>
                         <Button
                             onClick={() => navigate("/")}

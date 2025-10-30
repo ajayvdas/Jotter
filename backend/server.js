@@ -11,9 +11,7 @@ const app = express();
 await connectDB();
 
 // Middlewares
-app.use(cors({
-  origin: 'https://jotter-t65g.vercel.app' // Replace with your client-side domain
-}));
+app.use(cors());
 app.use(express.json());
 // Routes
 app.use('/api/admin', adminRouter)

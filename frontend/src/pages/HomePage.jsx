@@ -1,4 +1,3 @@
-// HomePage.jsx (Main Component)
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Newsletter from "@/components/Newsletter";

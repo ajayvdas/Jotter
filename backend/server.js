@@ -11,7 +11,11 @@ const app = express();
 await connectDB();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 app.use(express.json());
 // Routes
 app.use('/api/admin', adminRouter)

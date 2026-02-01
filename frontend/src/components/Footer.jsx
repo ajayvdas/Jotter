@@ -83,13 +83,22 @@ export default function Footer() {
                     <div>
                         <h3 className="font-black text-lg mb-4 border-b-2 border-black pb-2">FOLLOW US</h3>
                         <div className="flex space-x-4">
-                            <Button className="bg-blue-500 text-white border-2 border-black rounded-none p-2 hover:bg-blue-600">
+                            <Button 
+                                aria-label="Follow us on Facebook"
+                                className="bg-blue-600 text-white border-2 border-black rounded-none p-2 hover:bg-blue-700"
+                            >
                                 <Facebook className="w-5 h-5" />
                             </Button>
-                            <Button className="bg-red-500 text-white border-2 border-black rounded-none p-2 hover:bg-red-600">
+                            <Button 
+                                aria-label="Follow us on Twitter"
+                                className="bg-red-500 text-white border-2 border-black rounded-none p-2 hover:bg-red-600"
+                            >
                                 <Twitter className="w-5 h-5" />
                             </Button>
-                            <Button className="bg-yellow-400 text-black border-2 border-black rounded-none p-2 hover:bg-yellow-300">
+                            <Button 
+                                aria-label="Follow us on GitHub"
+                                className="bg-yellow-400 text-black border-2 border-black rounded-none p-2 hover:bg-yellow-300"
+                            >
                                 <Github className="w-5 h-5" />
                             </Button>
                         </div>

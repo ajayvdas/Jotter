@@ -11,7 +11,10 @@ export const SearchBar = ({ searchTerm, onSearchChange }) => {
                 onChange={onSearchChange}
                 className="border-4 border-black rounded-none font-bold text-lg"
             />
-            <Button className="bg-blue-500 text-white font-black border-4 border-black border-l-0 rounded-none hover:bg-blue-600">
+            <Button 
+                aria-label="Search blogs"
+                className="bg-blue-600 text-white font-black border-4 border-black border-l-0 rounded-none hover:bg-blue-700"
+            >
                 <Search className="w-5 h-5" />
             </Button>
         </div>

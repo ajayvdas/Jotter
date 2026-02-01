@@ -22,7 +22,7 @@ export default function HeroSection ({
             transition={{ delay: 0.3 }}
         >
             <div className="container mx-auto px-4 text-center">
-                <div className="inline-block bg-blue-500 text-white px-4 py-2 font-black text-sm border-2 border-black mb-6 transform -rotate-1">
+                <div className="inline-block bg-blue-600 text-white px-4 py-2 font-black text-sm border-2 border-black mb-6 transform -rotate-1">
                     NEW: AI FEATURE INTEGRATED
                 </div>
 

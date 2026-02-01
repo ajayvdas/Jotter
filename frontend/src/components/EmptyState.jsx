@@ -8,7 +8,7 @@ export default function EmptyState  ({ hasFilters }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
         >
-            <h3 className="text-2xl font-black mb-4">No blogs found</h3>
+            <h2 className="text-2xl font-black mb-4">No blogs found</h2>
             <p className="text-gray-600 font-bold">
                 {hasFilters ? 
                     "Try adjusting your search terms or selected category" : 
